@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th=""
+      layout:decorate="~{layouts/application.html}">
+
+<section layout:fragment="content">
+
+    <div class="container mt-4">
+        <h1 th:text="Сайты"></h1>
+    <table class="table table-bordered table-hover mt-3">
+        <thead>
+            <tr>
+                <th class="col-1">ID</th>
+                <th class="col-2">Название</th>
+                <th class="col-2">Последняя проверка</th>
+                <th class="col-4">Код ответа</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="url : ${urls}" th:object="${url}">
+                <td th:text="*{getId()}"></td>
+                <td><a th:href="@{/urls/{id}(id=*{getId()})}" th:text="${#strings.abbreviate(url.getName(), 30)}"></a></td>
+                <td th:if="${!url.getUrlChecks().isEmpty()}" th:text="${#temporals.format(url.getUrlChecks().get(url.getUrlChecks().size()-1).getCreatedAt(), 'dd/MM/yyyy HH:mm')}"></td>
+                <td th:if="${!url.getUrlChecks().isEmpty()}" th:text="${url.getUrlChecks().get(url.getUrlChecks().size()-1).getStatusCode()}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container">
+        <nav>
+            <ul class="pagination justify-content-center">
+                <li th:class="'page-item' + ${currentPage <= 1 ? ' disabled' : ''}">
+                    <a class="page-link" th:href="@{/urls(page=${currentPage - 1},term=${term})}">Previous</a>
+                </li>
+                <li th:each="page : ${pages}" th:class="'page-item' + ${currentPage == page ? ' active' : ''}">
+                    <a class="page-link" th:href="@{/urls(page=${page},term=${term})}" th:text="${page}"></a>
+                </li>
+                <li th:class="'page-item' + ${currentPage >= #lists.size(pages) ? ' disabled' : ''}">
+                    <a class="page-link" th:href="@{/urls(page=${currentPage + 1},)}">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </div>
+</section>
+</html>
