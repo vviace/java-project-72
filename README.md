@@ -8,8 +8,6 @@
 Отработаны основные принципы построения сайтов:
 Работа с роутингом, обработка запросов и взаимодействие с базой данных Ebean ORM. 
 ## Quick Start
-* `make setup` for --gradle-version 7.2
-* `make install:`
 * `make build`
 * `make start`
 * Адрес приложения `localhost:3000`
