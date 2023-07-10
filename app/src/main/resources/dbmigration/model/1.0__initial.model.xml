@@ -5,7 +5,6 @@
             <column name="id" type="bigint" primaryKey="true"/>
             <column name="name" type="varchar"/>
             <column name="created_at" type="timestamp" notnull="true"/>
-            <column name="updated_at" type="timestamp" notnull="true"/>
         </createTable>
         <createTable name="url_check" pkName="pk_url_check">
             <column name="id" type="bigint" primaryKey="true"/>

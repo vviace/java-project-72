@@ -1,6 +1,7 @@
 package hexlet.code.domain;
 
 import io.ebean.Model;
+import io.ebean.annotation.NotNull;
 import io.ebean.annotation.WhenCreated;
 import io.ebean.annotation.WhenModified;
 
@@ -18,8 +19,6 @@ public final class Url extends Model {
     private String name;
     @WhenCreated
     private Instant createdAt;
-    @WhenModified
-    private Instant updatedAt;
     @OneToMany(cascade = CascadeType.ALL)
     private List<UrlCheck> urlChecks;
 
