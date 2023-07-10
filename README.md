@@ -4,7 +4,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/0b2d1bbf94c4c559d2ad/test_coverage)](https://codeclimate.com/github/vviace/java-project-72/test_coverage)
 ## WEB-application Page-analyzer
 Результатом работы над проектом WEB-приложение, основанный на фреймоврке Javelin, которое можно запустить с помощью исполняемого файла.
-## >Description: 
+## Description: 
 Отработаны основные принципы построения сайтов:
 Работа с роутингом, обработка запросов и взаимодействие с базой данных Ebean ORM. 
 ## Quick Start
