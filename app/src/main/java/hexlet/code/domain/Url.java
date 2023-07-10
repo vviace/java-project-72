@@ -1,9 +1,9 @@
 package hexlet.code.domain;
 
 import io.ebean.Model;
-import io.ebean.annotation.NotNull;
+
 import io.ebean.annotation.WhenCreated;
-import io.ebean.annotation.WhenModified;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
